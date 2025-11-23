@@ -15,32 +15,25 @@
       <div class="ring ring2"></div>
       <div class="ring ring3"></div>
     </div>
-    <form id="login-form" class="login-form">
-      <h2>Login</h2>
-      <input type="text" id="username" placeholder="Username" required />
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        required
-        autocomplete="off"
-      />
+    <form id="login-form" class="login-form" autocomplete="off" novalidate>
+      <h2>Masukkan Password</h2>
+      <input type="password" id="password" placeholder="KEYLA" required autocomplete="off" />
       <button type="submit">MASUK</button>
-      <p id="login-error" class="error-msg"></p>
+      <p id="login-error" class="error-msg" aria-live="polite"></p>
     </form>
   </div>
 
   <!-- MAIN PAGE -->
-  <div id="main-page" class="page main-page hidden">
+  <div id="main-page" class="page main-page hidden" aria-hidden="true">
     <header>
       <h1 id="top-nickname">HANIF GANTENG</h1>
     </header>
 
     <main>
-      <div class="dark-room">
+      <div class="dark-room" role="main" aria-label="Kubus interaktif">
         <div id="bubble-container"></div>
-        <div id="cube-container">
-          <div id="cube" class="cube">
+        <div id="cube-container" tabindex="0" aria-label="Kubus 3D interaktif">
+          <div id="cube" class="cube" aria-live="polite" aria-roledescription="3D cube">
             <div class="face face1"></div>
             <div class="face face2"></div>
             <div class="face face3"></div>
