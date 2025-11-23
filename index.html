@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Album Buku</title>
+    <title>Buku Album</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="album-container">
+<div class="container">
+
+    <h1 class="title">Album Foto</h1>
+
     <div class="book">
 
-        <!-- HALAMAN 1 -->
+        <!-- Halaman 1 -->
         <div class="page page-1">
-            <div class="photo"><img src="images/foto1.jpg" alt=""></div>
-            <div class="photo"><img src="images/foto2.jpg" alt=""></div>
-            <div class="photo"><img src="images/foto3.jpg" alt=""></div>
+            <div class="photo"><img src="images/foto1.jpg"></div>
+            <div class="photo"><img src="images/foto2.jpg"></div>
+            <div class="photo"><img src="images/foto3.jpg"></div>
         </div>
 
-        <!-- HALAMAN 2 -->
+        <!-- Halaman 2 -->
         <div class="page page-2">
-            <div class="photo"><img src="images/foto4.jpg" alt=""></div>
-            <div class="photo"><img src="images/foto5.jpg" alt=""></div>
-            <div class="photo"><img src="images/foto6.jpg" alt=""></div>
+            <div class="photo"><img src="images/foto4.jpg"></div>
+            <div class="photo"><img src="images/foto5.jpg"></div>
+            <div class="photo"><img src="images/foto6.jpg"></div>
         </div>
 
     </div>
 
     <div class="controls">
-        <button id="prevPage">Previous Page</button>
-        <button id="nextPage">Next Page</button>
-        <button id="startSlide">Start Slideshow</button>
+        <button id="prevPage">Halaman Sebelumnya</button>
+        <button id="nextPage">Halaman Berikutnya</button>
+        <button id="startSlide">Mulai Slideshow</button>
         <button id="stopSlide">Stop Slideshow</button>
     </div>
 </div>
 
-<!-- Suara flipping halaman -->
-<audio id="flipSound" src="images/flip.mp3"></audio>
+<!-- Suara Flip -->
+<audio id="flipSound" src="images/flip.wav"></audio>
 
 <script src="script.js"></script>
 </body>
