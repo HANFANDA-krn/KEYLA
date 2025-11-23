@@ -1,46 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buku Album</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Album KEYLA</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <main class="page-wrap">
 
-<div class="container">
+    <!-- COVER (awal yang dilihat pengunjung) -->
+    <section class="cover" id="cover">
+      <div class="cover-inner">
+        <div class="cover-title">KEYLA</div>
+        <div class="cover-sub">Album Foto</div>
+        <button id="openBook" class="cta">Buka Buku</button>
+      </div>
+    </section>
 
-    <h1 class="title">Album Foto</h1>
-
-    <div class="book">
+    <!-- AREA BUKU -->
+    <section class="book-area" id="bookArea" aria-hidden="true">
+      <div class="book">
+        <!-- kiri: sampul dalam (agar efek buku terasa) -->
+        <div class="front-spine"></div>
 
         <!-- Halaman 1 -->
-        <div class="page page-1">
-            <div class="photo"><img src="images/foto1.jpg"></div>
-            <div class="photo"><img src="images/foto2.jpg"></div>
-            <div class="photo"><img src="images/foto3.jpg"></div>
+        <div class="page page-1" data-page="1" aria-hidden="false">
+          <div class="photo"><img src="images/foto1.jpg" alt="Foto 1"></div>
+          <div class="photo"><img src="images/foto2.jpg" alt="Foto 2"></div>
+          <div class="photo"><img src="images/foto3.jpg" alt="Foto 3"></div>
         </div>
 
-        <!-- Halaman 2 -->
-        <div class="page page-2">
-            <div class="photo"><img src="images/foto4.jpg"></div>
-            <div class="photo"><img src="images/foto5.jpg"></div>
-            <div class="photo"><img src="images/foto6.jpg"></div>
+        <!-- Halaman 2 (di belakang) -->
+        <div class="page page-2" data-page="2" aria-hidden="true">
+          <div class="photo"><img src="images/foto4.jpg" alt="Foto 4"></div>
+          <div class="photo"><img src="images/foto5.jpg" alt="Foto 5"></div>
+          <div class="photo"><img src="images/foto6.jpg" alt="Foto 6"></div>
         </div>
+      </div>
 
-    </div>
-
-    <div class="controls">
+      <!-- Kontrol manual -->
+      <nav class="controls" aria-label="Kontrol Album">
         <button id="prevPage">Halaman Sebelumnya</button>
         <button id="nextPage">Halaman Berikutnya</button>
-        <button id="startSlide">Mulai Slideshow</button>
-        <button id="stopSlide">Stop Slideshow</button>
-    </div>
-</div>
+      </nav>
+    </section>
 
-<!-- Suara Flip -->
-<audio id="flipSound" src="images/flip.wav"></audio>
+  </main>
 
-<script src="script.js"></script>
+  <!-- audio flip (letakkan files flip.wav di folder images/) -->
+  <audio id="flipSound" src="images/flip.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
