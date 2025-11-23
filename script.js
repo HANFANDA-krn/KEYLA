@@ -1,46 +1,40 @@
 let currentPage = 1;
-const totalPages = 2;
 
-const page1 = document.querySelector(".page-1");
 const flipSound = document.getElementById("flipSound");
+const page1 = document.querySelector(".page-1");
 
 let slideshowInterval = null;
 
-// Fungsi buka halaman
 function nextPage() {
     if (currentPage === 1) {
         page1.classList.add("open");
-        flipSound.play();
+        flipSound.play();   // mainkan suara flip
         currentPage = 2;
     }
 }
 
-// Fungsi tutup halaman
 function prevPage() {
     if (currentPage === 2) {
         page1.classList.remove("open");
-        flipSound.play();
+        flipSound.play();  // sinkron suara dengan animasi
         currentPage = 1;
     }
 }
 
-document.getElementById("nextPage").addEventListener("click", nextPage);
-document.getElementById("prevPage").addEventListener("click", prevPage);
+document.getElementById("nextPage").onclick = nextPage;
+document.getElementById("prevPage").onclick = prevPage;
 
-// SLIDESHOW OTOMATIS
-document.getElementById("startSlide").addEventListener("click", () => {
-    if (slideshowInterval) return; // Cegah duplikasi timer
+/* Slideshow otomatis */
+document.getElementById("startSlide").onclick = () => {
+    if (slideshowInterval) return;
 
     slideshowInterval = setInterval(() => {
-        if (currentPage === 1) {
-            nextPage();
-        } else {
-            prevPage();
-        }
-    }, 3000);
-});
+        if (currentPage === 1) nextPage();
+        else prevPage();
+    }, 3500);
+};
 
-document.getElementById("stopSlide").addEventListener("click", () => {
+document.getElementById("stopSlide").onclick = () => {
     clearInterval(slideshowInterval);
     slideshowInterval = null;
-});
+};
