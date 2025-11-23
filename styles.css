@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -20,13 +20,11 @@ body, html {
   position: relative;
 }
 
-/* Hide elements */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* LOGIN PAGE */
-
 .login-page {
   background-color: black;
   color: white;
@@ -39,7 +37,7 @@ body, html {
   padding: 20px;
 }
 
-/* Rings around page */
+/* Rings */
 .rings-container {
   position: absolute;
   top: 50%;
@@ -50,6 +48,7 @@ body, html {
   transform-origin: center center;
   pointer-events: none;
   --ring-color: #888888;
+  z-index: 0;
 }
 
 .ring {
@@ -103,6 +102,7 @@ body, html {
   100% { transform: translateZ(0px) rotateY(360deg);}
 }
 
+/* Login form */
 .login-form {
   background: rgba(0, 0, 0, 0.7);
   padding: 30px 40px;
@@ -112,6 +112,7 @@ body, html {
   box-shadow: 0 0 20px #555;
   text-align: center;
   font-weight: 600;
+  position: relative;
 }
 
 .login-form h2 {
@@ -128,6 +129,17 @@ body, html {
   border-radius: 6px;
   border: none;
   font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #111;
+  color: white;
+}
+
+.login-form input::placeholder {
+  letter-spacing: 3px;
+  color: #bbb;
 }
 
 .login-form input:focus {
@@ -147,19 +159,19 @@ body, html {
   transition: background 0.25s ease;
 }
 
-.login-form button:hover {
+.login-form button:hover, .login-form button:focus {
   background: #b0b0b0;
+  outline: none;
 }
 
 .error-msg {
   color: #ff6666;
   font-size: 14px;
   margin-top: 8px;
-  height: 18px;
+  min-height: 18px;
 }
 
 /* MAIN PAGE */
-
 .main-page {
   display: flex;
   flex-direction: column;
@@ -227,6 +239,7 @@ main {
   margin: 0 auto;
   cursor: grab;
   touch-action: none;
+  outline: none;
 }
 
 /* Cube */
@@ -251,33 +264,15 @@ main {
   backface-visibility: hidden;
 }
 
-/* Cube faces */
-.face1 {
-  transform: rotateY(0deg) translateZ(140px);
-  background-image: url('images/IMG-20251122-WA0039.jpg');
-}
-.face2 {
-  transform: rotateY(90deg) translateZ(140px);
-  background-image: url('images/IMG-20251122-WA0048.jpg');
-}
-.face3 {
-  transform: rotateY(180deg) translateZ(140px);
-  background-image: url('images/IMG-20251122-WA0049.jpg');
-}
-.face4 {
-  transform: rotateY(-90deg) translateZ(140px);
-  background-image: url('images/IMG-20251122-WA0047.jpg');
-}
-.face5 {
-  transform: rotateX(90deg) translateZ(140px);
-  background-image: url('images/IMG-20251122-WA0038.jpg');
-}
-.face6 {
-  transform: rotateX(-90deg) translateZ(140px);
-  background-image: url('images/IMG-20251123-WA0022.jpg');
-}
+/* Use images from images/ folder */
+.face1 { transform: rotateY(0deg) translateZ(140px); background-image: url('images/IMG-20251122-WA0039.jpg'); }
+.face2 { transform: rotateY(90deg) translateZ(140px); background-image: url('images/IMG-20251122-WA0048.jpg'); }
+.face3 { transform: rotateY(180deg) translateZ(140px); background-image: url('images/IMG-20251122-WA0049.jpg'); }
+.face4 { transform: rotateY(-90deg) translateZ(140px); background-image: url('images/IMG-20251122-WA0047.jpg'); }
+.face5 { transform: rotateX(90deg) translateZ(140px); background-image: url('images/IMG-20251122-WA0038.jpg'); }
+.face6 { transform: rotateX(-90deg) translateZ(140px); background-image: url('images/IMG-20251123-WA0022.jpg'); }
 
-/* Bubble styles */
+/* Bubble container */
 #bubble-container {
   position: absolute;
   width: 100%;
@@ -297,16 +292,11 @@ main {
 }
 
 @keyframes bubbleRise {
-  0% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.3);
-  }
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-100px) scale(0.3); }
 }
 
+/* Responsive */
 @media screen and (max-width: 600px) {
   #cube-container {
     width: 90vw;
